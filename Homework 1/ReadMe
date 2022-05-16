@@ -1,0 +1,9 @@
+This program creates a child process in order to compute the sum of 1 to 100. 
+
+In order to make this file, first call 'make' in order to compile the code. 
+Then call ./homework1 to run the code. The code will output the sum of 1 to 100,
+which is 5050. 
+
+This program uses a pipe to communicate between the child and the parent process. 
+After the child computes the sum, it sends the sum to the parent to finish the rest
+of the computation. 
