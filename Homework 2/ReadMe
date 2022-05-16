@@ -1,0 +1,3 @@
+This code takes 4 threads to compute the sum of 1-100. The threads get created, with a different structure holding 
+the thread number, as well as the starting and ending values to compute in the sum function. The sum function goes through
+the starting number to the ending number and computes it. The thread then returns that value and will print the sum of 1-100.
