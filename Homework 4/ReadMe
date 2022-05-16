@@ -1,0 +1,6 @@
+This homework dealth with mutex locks and strategic placement to get the code to execute correctly. In order to run, simply type make in order to compile the code, then run with ./homework3 .
+I only altered 2 areas of the code. 1 to lock, and 1 to unlock. The first was within the checking of the conditional statement so the loop knows whether to stay or exit. Here, the mutex lock locks itself, 
+simultaneously protecting x, sum, result and counter. Because x and sum are accessed by all threads, these are the most important variables needed to be locked in order to ensure that the threads don't 
+run too many iterations of the loop. Then, after x is incremented, sum is calculated and result is updated, the lock unlocks itself, allowing for the next thread to gain access to the loop and continuing the 
+cycle again. There is also an unlock statement after the for loop ends. This is because of the placement of the locks. When the loop checks to see if x < 1000000, it is currently in a lock. Ix x is not < 100000, 
+then it will exit the loop but it will never unlock, thus leaving the code constantly executing with nothing else happening. The unlock statement after the for loop fixes that, allowing for the code to execute smoothly.
