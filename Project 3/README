@@ -1,0 +1,20 @@
+****************
+CS:APP Proxy Lab
+****************
+
+Makefile	- For building proxy
+README		- This file
+
+# Proxy source files
+proxy.{c,h}	- Primary proxy code
+csapp.{c,h}	- Wrapper and helper functions from the CS:APP text
+
+In order to run this, first call make. Then have 2 terminals. One terminal will run the server using ./server 90
+Then the other terminal will run ./proxy 8080 no_thread or ./proxy 8080 thread. This will cause both to run with and wait for the web browser. 
+
+The proxy.c file looks for 3 arguments, with the third argument being no_thread or thread. This is so the code knows whether to use threads or processes. 
+Run the web browser with 127.0.0.1:8080 to connect. This will cause the message to print to the screen. 
+
+This will also cause it to be written into the log file. 
+
+
