@@ -1,0 +1,16 @@
+Runtime for Standard I/O calls
+real    0m0.171s
+user    0m0.109s
+sys     0m0.077s
+
+Runtime for System calls
+real    0m17.688s
+user    0m2.108s
+sys     0m15.546s
+
+The reason that the runtime for the system calls is so long is because standard I/O reads the data into a large buffer, allowing it
+to perform input and output in fixed, easy to compute, sized chunks. This also means that a system call does not need to be made every time,
+meaning that the program can be run much faster. Because standard I/O is buffered, it uses the minimum amount of read and write calls. 
+
+System calls are unbuffered I/O, meaning that each read or write invokes a system call to the kernel. Because the kernel is the lowest
+level, each read and write that occurs takes substantially more time than standard I/O calls, which is the result we see above. 
